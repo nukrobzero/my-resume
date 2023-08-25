@@ -123,7 +123,7 @@ const Skills = () => {
   ];
 
   return (
-    <div className="flex flex-col justify-center items-center" id="skills">
+    <div className="flex flex-col justify-center items-center pb-6" id="skills">
       <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-8 gap-x-0 gap-y-6 justify-center items-center w-full">
         {data.map((item, idx) => (
           <Link

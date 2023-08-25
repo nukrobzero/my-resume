@@ -11,10 +11,6 @@ const HomeHero = () => {
         </h1>
         <p className="flex flex-col justify-center items-start space-y-4">
           <span>
-            🙋 สวัสดีครับ ผม พีระดนย์ ชัยรัตนคำโรจน์ หรือนักรบ
-            เป็นคนที่ชอบและหลงไหลในการเขียนโปรแกรม
-          </span>
-          <span>
             🌱 I’m constantly learning new technologies for Front-End, Back-End,
             DevOps & more
           </span>
