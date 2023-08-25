@@ -7,32 +7,32 @@ const ScrollAreaProfile = () => {
     <div className="p-4">
       <div className="py-6">
         <Image
-          src={`/blank-profile-picture-973460_1280.webp`}
+          src={`https://drive.google.com/uc?id=1QH5gU4n_g3g9KQV9EyyytACO-B7uC9Bk`}
           width={280}
           height={280}
           alt="img-profile"
           style={{ objectFit: "cover" }}
-          className="rounded-full"
+          className="rounded-full border-double border-4 border-blue-500 p-2 hover:animate-pulse"
         />
       </div>
       <div className="py-6 text-center">
-        <h1 className="text-xl font-semibold">eiei</h1>
+        <h1 className="text-xl font-semibold uppercase">Peeradon (Nukrob)</h1>
       </div>
       <div className="flex justify-center items-center py-8">
         <ul className="flex flex-col justify-center items-start space-y-4 uppercase font-semibold">
-          <li>
+          <li className="font-bold bg-gradient-to-r from-[#0083CA] to-[#0083CA] bg-[length:0%_2px] bg-no-repeat bg-left-bottom hover:bg-[length:100%_3px] transition-all duration-500">
             <Link href={`/#home`}>Home</Link>
           </li>
-          <li>
+          <li className="font-bold bg-gradient-to-r from-[#0083CA] to-[#0083CA] bg-[length:0%_2px] bg-no-repeat bg-left-bottom hover:bg-[length:100%_3px] transition-all duration-500">
             <Link href={`/#skills`}>Skills</Link>
           </li>
-          <li>
+          <li className="font-bold bg-gradient-to-r from-[#0083CA] to-[#0083CA] bg-[length:0%_2px] bg-no-repeat bg-left-bottom hover:bg-[length:100%_3px] transition-all duration-500">
             <Link href={`/#experience`}>Experience</Link>
           </li>
-          <li>
+          <li className="font-bold bg-gradient-to-r from-[#0083CA] to-[#0083CA] bg-[length:0%_2px] bg-no-repeat bg-left-bottom hover:bg-[length:100%_3px] transition-all duration-500">
             <Link href={`/#works`}>Works</Link>
           </li>
-          <li>
+          <li className="font-bold bg-gradient-to-r from-[#0083CA] to-[#0083CA] bg-[length:0%_2px] bg-no-repeat bg-left-bottom hover:bg-[length:100%_3px] transition-all duration-500">
             <Link href={`/#contact`}>Contact</Link>
           </li>
         </ul>

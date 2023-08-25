@@ -126,22 +126,16 @@ const Skills = () => {
     <div className="flex flex-col justify-center items-center pb-6" id="skills">
       <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-8 gap-x-0 gap-y-6 justify-center items-center w-full">
         {data.map((item, idx) => (
-          <Link
-            href={item.link}
-            key={idx}
-            target="_blank"
-            rel="noreferrer"
-            className="flex justify-center items-center "
-          >
+          <div key={idx} className="flex justify-center items-center ">
             <Image
               src={item.src}
               width={80}
               height={80}
               alt={item.alt}
-              style={{objectFit:"inherit"}}
+              style={{ objectFit: "inherit" }}
               className="!w-[80px] !h-[80px] bg-neutral-100 hover:animate-spin rounded-full p-1"
             />
-          </Link>
+          </div>
         ))}
       </div>
     </div>
