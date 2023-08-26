@@ -7,7 +7,7 @@ const ScrollAreaProfile = () => {
     <div className="p-4">
       <div className="py-6 overflow-hidden">
         <Image
-          src={`https://drive.google.com/uc?export=view&id=1QH5gU4n_g3g9KQV9EyyytACO-B7uC9Bk`}
+          src={`/_nukrob.rob-11092022-0001.jpg`}
           width={280}
           height={280}
           alt="img-profile"
