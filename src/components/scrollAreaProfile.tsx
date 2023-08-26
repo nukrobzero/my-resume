@@ -11,7 +11,7 @@ const ScrollAreaProfile = () => {
           width={280}
           height={280}
           alt="img-profile"
-          style={{ objectFit: "cover", }}
+          style={{ objectFit: "cover" }}
           className="rounded-full border-double border-4 border-blue-500 p-2 hover:scale-150 transition-all duration-500 ease-in-out"
         />
       </div>
