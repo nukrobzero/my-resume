@@ -12,7 +12,7 @@ const NavBar = () => {
   return (
     <nav className="w-64 z-50">
       {/* Desktop */}
-      <div className="hidden lg:block fixed top-44 w-64 rounded-t-full bg-white text-black">
+      <div className="hidden lg:block fixed w-64 rounded-t-full bg-white text-black">
         <div className="w-0 h-0 border-t-[60px] border-t-transparent border-r-[75px] border-r-blue-500 border-b-[50px] border-b-transparent"></div>
         <div className="w-0 h-0 absolute -rotate-[32deg] -right-0 top-2 border-l-[75px] border-r-transparent border-r-[50px] border-b-blue-500 border-b-[75px] border-l-transparent"></div>
         <div className="w-0 h-0 absolute -left-48 top-[21rem] border-t-[200px] border-t-transparent border-r-[200px] border-r-white border-b-[5px] border-b-transparent"></div>
