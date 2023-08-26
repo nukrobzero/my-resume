@@ -1,6 +1,6 @@
 "use client";
 
-import { Anchor, Briefcase, ChevronDown } from "lucide-react";
+import { Anchor, Briefcase, ChevronDown, Satellite } from "lucide-react";
 
 const Experience = () => {
   const roadMapData = [
@@ -46,7 +46,8 @@ const Experience = () => {
 
   return (
     <div>
-      <div className="flex flex-col justify-center items-start">
+      <div className="flex flex-col justify-center items-start relative">
+        <div className="absolute right-0 animate-pulse text-[#ffffff61] lg:text-white"><Satellite size={200} /></div>
         <div className="flex flex-col justify-center items-start !w-full">
           <span className="pb-2 flex flex-row justify-center items-center space-x-2">
             <span>

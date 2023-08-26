@@ -17,8 +17,12 @@ const NavBar = () => {
         <div className="w-0 h-0 absolute -rotate-[32deg] -right-0 top-2 border-l-[75px] border-r-transparent border-r-[50px] border-b-blue-500 border-b-[75px] border-l-transparent"></div>
         <div className="w-0 h-0 absolute -left-48 top-[21rem] border-t-[200px] border-t-transparent border-r-[200px] border-r-white border-b-[5px] border-b-transparent"></div>
         <div className="w-0 h-0 absolute -right-[12rem] top-[21rem] border-l-[200px] border-t-transparent border-t-[200px] border-l-white"></div>
-        <div className="absolute -left-48 top-[32.5rem] bg-red-600 rounded-full animate-ping"><Dot color="red" /></div>
-        <div className="absolute -right-48 top-[32.5rem] bg-red-600 rounded-full animate-ping"><Dot color="red" /></div>
+        <div className="absolute -left-48 top-[32.5rem] bg-red-600 rounded-full animate-ping">
+          <Dot color="red" />
+        </div>
+        <div className="absolute -right-48 top-[32.5rem] bg-red-600 rounded-full animate-ping">
+          <Dot color="red" />
+        </div>
         <ScrollAreaProfile />
         <div className="w-0 h-0 flex flex-row">
           <div className="w-0 h-0 border-l-[43px] border-l-transparent border-t-[75px] border-t-red-500 border-r-[43px] border-r-transparent"></div>
@@ -55,27 +59,52 @@ const NavBar = () => {
                 <ul className="flex flex-col justify-center items-start space-y-4 uppercase font-semibold">
                   <li>
                     <SheetTrigger asChild>
-                      <Link href={`/#home`}>Home</Link>
+                      <Link
+                        href={`/#home`}
+                        className="font-bold bg-gradient-to-r from-[#0083CA] to-[#0083CA] bg-[length:0%_2px] bg-no-repeat bg-left-bottom hover:bg-[length:100%_3px] transition-all duration-500"
+                      >
+                        Home
+                      </Link>
                     </SheetTrigger>
                   </li>
                   <li>
                     <SheetTrigger asChild>
-                      <Link href={`/#skills`}>Skills</Link>
+                      <Link
+                        href={`/#skills`}
+                        className="font-bold bg-gradient-to-r from-[#0083CA] to-[#0083CA] bg-[length:0%_2px] bg-no-repeat bg-left-bottom hover:bg-[length:100%_3px] transition-all duration-500"
+                      >
+                        Skills
+                      </Link>
                     </SheetTrigger>
                   </li>
                   <li>
                     <SheetTrigger asChild>
-                      <Link href={`/#experience`}>Experience</Link>
+                      <Link
+                        href={`/#experience`}
+                        className="font-bold bg-gradient-to-r from-[#0083CA] to-[#0083CA] bg-[length:0%_2px] bg-no-repeat bg-left-bottom hover:bg-[length:100%_3px] transition-all duration-500"
+                      >
+                        Experience
+                      </Link>
                     </SheetTrigger>
                   </li>
                   <li>
                     <SheetTrigger asChild>
-                      <Link href={`/#works`}>Works</Link>
+                      <Link
+                        href={`/#works`}
+                        className="font-bold bg-gradient-to-r from-[#0083CA] to-[#0083CA] bg-[length:0%_2px] bg-no-repeat bg-left-bottom hover:bg-[length:100%_3px] transition-all duration-500"
+                      >
+                        Works
+                      </Link>
                     </SheetTrigger>
                   </li>
                   <li>
                     <SheetTrigger asChild>
-                      <Link href={`/#contact`}>Contact</Link>
+                      <Link
+                        href={`/#contact`}
+                        className="font-bold bg-gradient-to-r from-[#0083CA] to-[#0083CA] bg-[length:0%_2px] bg-no-repeat bg-left-bottom hover:bg-[length:100%_3px] transition-all duration-500"
+                      >
+                        Contact
+                      </Link>
                     </SheetTrigger>
                   </li>
                 </ul>

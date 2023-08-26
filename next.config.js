@@ -3,6 +3,7 @@ const nextConfig = {
     images: {
         domains: [
           "drive.google.com",
+          "random.imagecdn.app"
         ],
     }
 }

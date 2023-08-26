@@ -133,7 +133,7 @@ const Skills = () => {
               height={80}
               alt={item.alt}
               style={{ objectFit: "inherit" }}
-              className="!w-[80px] !h-[80px] bg-neutral-100 hover:animate-spin rounded-full p-1"
+              className="!w-[80px] !h-[80px] bg-neutral-100 hover:animate-spin transition-all duration-500 ease-in-out rounded-full p-1"
             />
           </div>
         ))}

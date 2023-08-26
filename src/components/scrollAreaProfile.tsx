@@ -5,14 +5,14 @@ import Link from "next/link";
 const ScrollAreaProfile = () => {
   return (
     <div className="p-4">
-      <div className="py-6">
+      <div className="py-6 overflow-hidden">
         <Image
           src={`https://drive.google.com/uc?id=1QH5gU4n_g3g9KQV9EyyytACO-B7uC9Bk`}
           width={280}
           height={280}
           alt="img-profile"
-          style={{ objectFit: "cover" }}
-          className="rounded-full border-double border-4 border-blue-500 p-2 hover:animate-pulse"
+          style={{ objectFit: "cover", }}
+          className="rounded-full border-double border-4 border-blue-500 p-2 hover:scale-150 transition-all duration-500 ease-in-out"
         />
       </div>
       <div className="py-6 text-center">
