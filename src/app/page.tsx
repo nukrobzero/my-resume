@@ -7,7 +7,7 @@ import { Sparkle } from "lucide-react";
 
 export default function Home() {
   return (
-    <main className="container mx-auto">
+    <main>
       <HomeHero />
       <div className="h-[200px] flex justify-start items-center" id="skills">
         <span className="border-b w-full pb-3">
@@ -35,7 +35,7 @@ export default function Home() {
       <Work />
       <div
         className="h-[200px] flex justify-start items-center"
-        id="experience"
+        id="contact"
       >
         <span className="border-b w-full pb-3">
           <h1 className="text-4xl font-semibold uppercase">Contact</h1>

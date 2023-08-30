@@ -40,13 +40,12 @@ export default function ContactSection() {
   };
 
   return (
-    <>
-      <section className="my-24 relative" id="contact">
+      <section className="relative">
         <div className="absolute -left-32 -bottom-28 animate-pulse text-[#ffffff61] lg:text-white">
           <Orbit size={200}  />
         </div>
-        <div className="max-w-7xl mx-auto p-4 h-full">
-          <div className="flex flex-col justify-center max-w-2xl mx-auto m-4">
+        <div className="p-4 h-full">
+          <div className="flex flex-col justify-center md:max-w-2xl mx-auto m-4">
             {resData !== "" ? (
               <div className="flex flex-col text-center text-white">
                 <h1 className="text-4xl text-center font-bold mb-8 md:mb-12 bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 text-transparent bg-clip-text">
@@ -158,6 +157,5 @@ export default function ContactSection() {
           </div>
         </div>
       </section>
-    </>
   );
 }

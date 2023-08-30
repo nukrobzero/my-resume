@@ -24,13 +24,13 @@ const HomeHero = () => {
         </div>
       </div>
       <div className="flex flex-row justify-center items-center gap-8 pt-24">
-        <div className="animate-bounce text-[#ffffff61] lg:text-white">
+        <div className="animate-bounce text-white">
           <Rocket size={80} />
         </div>
-        <div className="animate-pulse text-[#ffffff61] lg:text-white">
+        <div className="animate-pulse text-white">
           <BoomBox size={80} />
         </div>
-        <div className="animate-waving-hand text-[#ffffff61] lg:text-white r">
+        <div className="animate-waving-hand text-white r">
           <Bird size={80} />
         </div>
       </div>

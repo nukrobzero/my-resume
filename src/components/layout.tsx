@@ -14,9 +14,9 @@ const Layout: FC<LayoutProps> = ({ children }) => {
       <div className="flex flex-col lg:flex-row min-h-screen text-neutral-100">
         <NavBar />
         <StarBackground />
-        <div className="lg:w-[70%] mx-auto">{children}</div>
+        <div className="container lg:w-[70%] mx-auto">{children}</div>
       </div>
-    </div>
+    </div>                                    
   );
 };
 

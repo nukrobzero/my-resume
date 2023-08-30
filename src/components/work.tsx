@@ -1,5 +1,7 @@
 import Pagination from "./paginations";
 
+export const revalidate = 60;
+
 const Work = async () => {
   const getRepo = await fetch(`https://api.github.com/user/repos`, {
     method: "GET",
