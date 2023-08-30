@@ -11,7 +11,7 @@ interface DataType {
   name: string;
   html_url: string;
   created_at: Date;
-  updated_at: Date;
+  pushed_at: Date;
   language: string;
 }
 
@@ -19,6 +19,7 @@ interface PaginationProps {
   data: DataType[];
   pageItem: number;
 }
+
 
 const Pagination: FC<PaginationProps> = ({ data, pageItem }) => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -84,7 +85,7 @@ const Pagination: FC<PaginationProps> = ({ data, pageItem }) => {
               </div>
               <div className="flex flex-col">
                 <span>Create At: {dateFormat(data.created_at)}</span>
-                <span>Update At: {dateFormat(data.updated_at)}</span>
+                <span>Update At: {dateFormat(data.pushed_at)}</span>
               </div>
             </Link>
           </div>
