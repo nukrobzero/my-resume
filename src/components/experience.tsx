@@ -9,14 +9,14 @@ const Experience = () => {
       educationLv: "Education Level	Bachelor's Degree",
       Faculty: "Computer Engineering",
       degree: "Bachelor of Engineering",
-      gpa: "2.01",
+      gpa: "",
     },
     {
       title: "Chiang Klang Pracha Pattana School 2014",
       educationLv: "High School",
       Faculty: "",
       degree: "",
-      gpa: "2.52",
+      gpa: "",
     },
   ];
 
@@ -89,10 +89,10 @@ const Experience = () => {
                       ""
                     )}
                   </span>
-                  <p>
+                  {/* <p>
                     <span className="font-medium">G.P.A.:</span>&nbsp;
                     {data.gpa}
-                  </p>
+                  </p> */}
                 </span>
                 {idx === roadMapData.length - 1 ? (
                   ""

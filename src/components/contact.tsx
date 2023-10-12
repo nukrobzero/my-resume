@@ -41,9 +41,9 @@ export default function ContactSection() {
 
   return (
       <section className="relative">
-        <div className="absolute -left-32 -bottom-28 animate-pulse text-[#ffffff61] lg:text-white">
+        {/* <div className="absolute -left-32 -bottom-28 animate-pulse text-[#ffffff61] lg:text-white">
           <Orbit size={200}  />
-        </div>
+        </div> */}
         <div className="p-4 h-full">
           <div className="flex flex-col justify-center md:max-w-2xl mx-auto m-4">
             {resData !== "" ? (

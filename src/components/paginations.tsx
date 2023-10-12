@@ -1,10 +1,10 @@
 "use client";
 
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { FC, useRef, useState } from "react";
 import Image from "next/image";
 import { dateFormat } from "@/lib/dateFormat";
+import { Pagination as PaginationNextUi } from "@nextui-org/react";
 
 interface DataType {
   id: number;
@@ -19,7 +19,6 @@ interface PaginationProps {
   data: DataType[];
   pageItem: number;
 }
-
 
 const Pagination: FC<PaginationProps> = ({ data, pageItem }) => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -91,165 +90,19 @@ const Pagination: FC<PaginationProps> = ({ data, pageItem }) => {
           </div>
         ))}
       </div>
-      {totalPages > 1 && totalPages <= 5 && (
-        <div className="flex justify-center my-8">
-          <button
-            onClick={handlePreviousPage}
-            disabled={currentPage === 1}
-            className={`mx-2 px-4 py-2 rounded-full bg-white text-gray-700 ${
-              currentPage !== 1 ? "hover:bg-blue-500 hover:text-white" : ""
-            } transition-all duration-300 ease-in-out`}
-          >
-            <ChevronLeft />
-          </button>
-          {Array.from({ length: totalPages }, (_, index) => index + 1).map(
-            (page) => {
-              return (
-                <div key={page}>
-                  <button
-                    onClick={() => handlePageChange(page)}
-                    className={`mx-2 px-4 py-2 rounded-full ${
-                      page === currentPage
-                        ? "bg-blue-500 text-white"
-                        : "bg-white text-gray-700"
-                    } hover:bg-blue-500 hover:text-white transition-all duration-300 ease-in-out`}
-                  >
-                    {page}
-                  </button>
-                </div>
-              );
-            }
-          )}
-          <button
-            onClick={handleNextPage}
-            disabled={currentPage === totalPages}
-            className={`mx-2 px-4 py-2 rounded-full bg-white text-gray-700 ${
-              currentPage !== totalPages
-                ? "hover:bg-blue-500 hover:text-white"
-                : ""
-            } transition-all duration-300 ease-in-out`}
-          >
-            <ChevronRight />
-          </button>
-        </div>
-      )}
-      {totalPages > 6 && (
-        <div className="flex justify-center my-8">
-          <button
-            onClick={handlePreviousPage}
-            disabled={currentPage === 1}
-            className={`mx-2 px-4 py-2 rounded-full bg-white text-gray-700 ${
-              currentPage !== 1 ? "hover:bg-blue-500 hover:text-white" : ""
-            } transition-all duration-300 ease-in-out`}
-          >
-            <ChevronLeft />
-          </button>
-          {/* Start */}
-          {Array.from({ length: 2 }, (_, index) => index + 1).map((page) => {
-            if (currentPage <= 2) {
-              return (
-                <div key={page}>
-                  <button
-                    onClick={() => handlePageChange(page)}
-                    className={`mx-2 px-4 py-2 rounded-full ${
-                      page === currentPage
-                        ? "bg-blue-500 text-white"
-                        : "bg-white text-gray-700"
-                    } hover:bg-blue-500 hover:text-white transition-all duration-300 ease-in-out`}
-                  >
-                    {page}
-                  </button>
-                </div>
-              );
-            }
-            return;
-          })}
-          {currentPage <= 2 && (
-            <span className="flex justify-center items-end">...</span>
-          )}
-          {/* Page > 2 */}
-          {Array.from({ length: 1 }, (_, index) => index + 1).map((page) => {
-            if (currentPage > 2) {
-              return (
-                <div key={page}>
-                  <button
-                    onClick={() => handlePageChange(page)}
-                    className={`mx-2 px-4 py-2 rounded-full ${
-                      page === currentPage
-                        ? "bg-blue-500 text-white"
-                        : "bg-white text-gray-700"
-                    } hover:bg-blue-500 hover:text-white transition-all duration-300 ease-in-out`}
-                  >
-                    {page}
-                  </button>
-                </div>
-              );
-            }
-            return;
-          })}
-          {currentPage > 2 && (
-            <span className="flex justify-center items-end">...</span>
-          )}
-          {/* Page all */}
-          {Array.from({ length: 3 }, (_, index) => currentPage + index).map(
-            (page) => {
-              if (currentPage > 2 && page > 2 && page <= totalPages - 2) {
-                return (
-                  <div key={page}>
-                    <button
-                      onClick={() => handlePageChange(page)}
-                      className={`mx-2 px-4 py-2 rounded-full ${
-                        page === currentPage
-                          ? "bg-blue-500 text-white"
-                          : "bg-white text-gray-700"
-                      } hover:bg-blue-500 hover:text-white transition-all duration-300 ease-in-out`}
-                    >
-                      {page}
-                    </button>
-                  </div>
-                );
-              }
-              return;
-            }
-          )}
-          {currentPage >= 3 && (
-            <span className="flex justify-center items-end">...</span>
-          )}
-          {/* Page last  */}
-          {Array.from({ length: 2 }, (_, index) => totalPages + index - 1).map(
-            (page) => {
-              if (currentPage >= 1 || currentPage === totalPages - 1) {
-                return (
-                  <div key={page}>
-                    <button
-                      onClick={() => handlePageChange(page)}
-                      className={`mx-2 px-4 py-2 rounded-full ${
-                        page === currentPage
-                          ? "bg-blue-500 text-white"
-                          : "bg-white text-gray-700"
-                      } hover:bg-blue-500 hover:text-white transition-all duration-300 ease-in-out`}
-                    >
-                      {page}
-                    </button>
-                  </div>
-                );
-              }
-              return;
-            }
-          )}
-          <button
-            onClick={handleNextPage}
-            disabled={currentPage === totalPages}
-            className={`mx-2 px-4 py-2 rounded-full bg-white text-gray-700 ${
-              currentPage !== totalPages
-                ? "hover:bg-blue-500 hover:text-white"
-                : ""
-            } transition-all duration-300 ease-in-out`}
-          >
-            <ChevronRight />
-          </button>
-        </div>
-      )}
+      <div className="flex justify-center my-8">
+        <PaginationNextUi
+          onChange={handlePageChange}
+          showControls
+          showShadow
+          loop
+          total={totalPages}
+          initialPage={itemsPerPage}
+          page={1}
+          color="warning"
+          size="lg"
+        />
+      </div>
     </div>
   );
 };
