@@ -2,7 +2,6 @@
 
 import { FC, ReactNode } from "react";
 import NavBar from "./navBar";
-import StarBackground from "./starBg";
 
 interface LayoutProps {
   children: ReactNode;
@@ -13,10 +12,9 @@ const Layout: FC<LayoutProps> = ({ children }) => {
     <div className="max-w-screen-2xl mx-auto">
       <div className="flex flex-col lg:flex-row min-h-screen text-neutral-100">
         <NavBar />
-        <StarBackground />
         <div className="container lg:w-[70%] mx-auto">{children}</div>
       </div>
-    </div>                                    
+    </div>
   );
 };
 

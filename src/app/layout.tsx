@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Layout from "@/components/layout";
 import { Providers } from "@/lib/providers";
+import StarBackground from "@/components/starBg";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,6 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${inter.className} bg-black`}>
+        <StarBackground />
         <Providers>
           <Layout>{children}</Layout>
         </Providers>

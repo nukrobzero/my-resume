@@ -42,19 +42,6 @@ const Pagination: FC<PaginationProps> = ({ data, pageItem }) => {
     scrollRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
-  // Function to handle next and previous page buttons
-  const handleNextPage = () => {
-    setCurrentPage((prevPage) => Math.min(prevPage + 1, totalPages));
-
-    scrollRef.current?.scrollIntoView();
-  };
-
-  const handlePreviousPage = () => {
-    setCurrentPage((prevPage) => Math.max(prevPage - 1, 1));
-
-    scrollRef.current?.scrollIntoView();
-  };
-
   //random image
   const ranImage = "https://random.imagecdn.app/500/450";
 
@@ -99,7 +86,7 @@ const Pagination: FC<PaginationProps> = ({ data, pageItem }) => {
           total={totalPages}
           initialPage={itemsPerPage}
           page={1}
-          color="warning"
+          color="primary"
           size="lg"
         />
       </div>

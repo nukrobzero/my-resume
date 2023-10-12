@@ -5,6 +5,8 @@ import Skills from "@/components/skills";
 import Work from "@/components/work";
 import { Sparkle } from "lucide-react";
 
+export const revalidate = 5;
+
 export default function Home() {
   return (
     <main>
