@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { Bird, BoomBox, Rocket } from "lucide-react";
 
 const HomeHero = () => {
@@ -40,29 +40,27 @@ const HomeHero = () => {
           </motion.p>
         </div>
       </div>
-      <AnimatePresence>
-        <motion.div
-          initial={{ opacity: 0, y: "100%" }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{
-            delay: 0.1,
-            duration: 1,
-            type: "spring",
-            stiffness: 150,
-          }}
-          className="flex flex-row justify-center items-center gap-8 pt-24"
-        >
-          <div className="animate-bounce text-white">
-            <Rocket size={80} />
-          </div>
-          <div className="animate-pulse text-white">
-            <BoomBox size={80} />
-          </div>
-          <div className="animate-waving-hand text-white r">
-            <Bird size={80} />
-          </div>
-        </motion.div>
-      </AnimatePresence>
+      <motion.div
+        initial={{ opacity: 0, y: "100%" }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{
+          delay: 0.1,
+          duration: 1,
+          type: "spring",
+          stiffness: 150,
+        }}
+        className="flex flex-row justify-center items-center gap-8 pt-24"
+      >
+        <div className="animate-bounce text-white">
+          <Rocket size={80} />
+        </div>
+        <div className="animate-pulse text-white">
+          <BoomBox size={80} />
+        </div>
+        <div className="animate-waving-hand text-white r">
+          <Bird size={80} />
+        </div>
+      </motion.div>
     </div>
   );
 };
