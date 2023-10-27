@@ -7,12 +7,21 @@ import Link from "next/link";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { AlignLeft, Dot } from "lucide-react";
 import ScrollAreaProfile from "./scrollAreaProfile";
+import { motion } from "framer-motion";
 
 const NavBar = () => {
   return (
     <nav className="w-64 z-50">
       {/* Desktop */}
-      <div className="hidden lg:block fixed w-64 rounded-t-full bg-white text-black">
+      <motion.div
+        initial={{ y: "100vh" }}
+        animate={{ y: 0 }}
+        transition={{
+          delay: 0.5,
+          duration: 3,
+        }}
+        className="hidden lg:block fixed w-64 rounded-t-full bg-white text-black"
+      >
         <div className="w-0 h-0 border-t-[60px] border-t-transparent border-r-[75px] border-r-blue-500 border-b-[50px] border-b-transparent"></div>
         <div className="w-0 h-0 absolute -rotate-[32deg] -right-0 top-2 border-l-[75px] border-r-transparent border-r-[50px] border-b-blue-500 border-b-[75px] border-l-transparent"></div>
         <div className="w-0 h-0 absolute -left-48 top-[21rem] border-t-[200px] border-t-transparent border-r-[200px] border-r-white border-b-[5px] border-b-transparent"></div>
@@ -29,7 +38,7 @@ const NavBar = () => {
           <div className="w-0 h-0 border-l-[43px] border-l-transparent border-t-[75px] border-t-red-500 border-r-[43px] border-r-transparent"></div>
           <div className="w-0 h-0 border-l-[43px] border-l-transparent border-t-[75px] border-t-red-500 border-r-[43px] border-r-transparent"></div>
         </div>
-      </div>
+      </motion.div>
       {/* Mobile */}
       <div className="flex justify-center items-center lg:hidden fixed top-20 bg-white w-16 h-14  rounded-r-full">
         <Sheet>

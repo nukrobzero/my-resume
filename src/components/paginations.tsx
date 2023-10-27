@@ -5,6 +5,7 @@ import { FC, useRef, useState } from "react";
 import Image from "next/image";
 import { dateFormat } from "@/lib/dateFormat";
 import { Pagination as PaginationNextUi } from "@nextui-org/react";
+import { motion } from "framer-motion";
 
 interface DataType {
   id: number;
@@ -46,10 +47,16 @@ const Pagination: FC<PaginationProps> = ({ data, pageItem }) => {
   const ranImage = "https://random.imagecdn.app/500/450";
 
   return (
-    <div ref={scrollRef}>
+    <div>
       <div className="grid grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-x-2 lg:gap-y-10 justify-items-center mx-auto my-12">
         {currentItems.map((data: any) => (
-          <div key={data.id} className="group md:w-[calc(300px-20px)]">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.2 }}
+            key={data.id}
+            className="group md:w-[calc(300px-20px)]"
+          >
             <Link href={data.html_url} target="_blank">
               <div className="overflow-hidden bg-cover bg-no-repeat rounded-sm rounded-e-[15rem]">
                 <Image
@@ -74,7 +81,7 @@ const Pagination: FC<PaginationProps> = ({ data, pageItem }) => {
                 <span>Update At: {dateFormat(data.pushed_at)}</span>
               </div>
             </Link>
-          </div>
+          </motion.div>
         ))}
       </div>
       <div className="flex justify-center my-8">

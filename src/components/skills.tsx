@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -126,7 +127,19 @@ const Skills = () => {
     <div className="flex flex-col justify-center items-center pb-6" id="skills">
       <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-8 gap-x-0 gap-y-6 justify-center items-center w-full">
         {data.map((item, idx) => (
-          <div key={idx} className="flex justify-center items-center ">
+          <motion.div
+            key={idx}
+            animate={{ d: item.alt, rotate: [0, 0, 270, 270, 0] }}
+            transition={{
+              duration: 2,
+              ease: "easeInOut",
+              times: [0, 0.2, 0.5, 0.6, 1],
+              repeat: Infinity,
+              repeatDelay: idx + 0.3,
+            }}
+            layoutId={item.alt}
+            className="flex justify-center items-center "
+          >
             <Image
               src={item.src}
               width={80}
@@ -135,7 +148,7 @@ const Skills = () => {
               style={{ objectFit: "inherit" }}
               className="!w-[80px] !h-[80px] bg-neutral-100 hover:animate-spin transition-all duration-500 ease-in-out rounded-full p-1"
             />
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>
