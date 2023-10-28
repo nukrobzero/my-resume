@@ -52,7 +52,7 @@ const Pagination: FC<PaginationProps> = ({ data, pageItem }) => {
         {currentItems.map((data: any) => (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2 }}
             key={data.id}
             className="group md:w-[calc(300px-20px)]"
@@ -64,9 +64,7 @@ const Pagination: FC<PaginationProps> = ({ data, pageItem }) => {
                   width={280}
                   height={350}
                   alt={data.name}
-                  layout="responsive"
-                  style={{ objectFit: "cover" }}
-                  className="xl:!w-[280px] !h-[calc(40%-50px)] transform hover:scale-110 transition duration-500 ease-in-out group-hover:scale-110"
+                  className="xl:!w-[280px] !h-[calc(40%-50px)] object-cover transform hover:scale-110 transition duration-500 ease-in-out group-hover:scale-110"
                 />
               </div>
               <div className="py-2 text-xl">

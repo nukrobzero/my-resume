@@ -12,18 +12,20 @@ const StarBackground = () => {
     const randomLeft = Math.random() * 100; // Percentage of viewport width
     const randomAnimate =
       animations[Math.floor(Math.random() * animations.length)];
+
     return (
-      <Star
-        key={index}
-        color="#f3fa3462"
-        size={16} // Adjust the size of the stars as needed
-        style={{
-          position: "fixed",
-          top: `${randomTop}vh`,
-          left: `${randomLeft}vw`,
-        }}
-        className={`animate-${randomAnimate}`} // Apply the random animation class
-      />
+      <div key={index}>
+        <Star
+          color="#f3fa3462"
+          size={16} // Adjust the size of the stars as needed
+          style={{
+            position: "fixed",
+            top: `${randomTop}vh`,
+            left: `${randomLeft}vw`,
+          }}
+          className={`animate-${randomAnimate}`}
+        />
+      </div>
     );
   });
 

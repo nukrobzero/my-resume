@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${inter.className} bg-black`}>
-        <StarBackground />
+        {/* <StarBackground /> */}
         <Providers>
           <Layout>{children}</Layout>
         </Providers>
