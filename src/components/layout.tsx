@@ -2,6 +2,7 @@
 
 import { FC, ReactNode } from "react";
 import NavBar from "./navBar";
+import Footer from "./footer";
 
 interface LayoutProps {
   children: ReactNode;
@@ -10,12 +11,13 @@ interface LayoutProps {
 const Layout: FC<LayoutProps> = ({ children }) => {
   return (
     <div className="max-w-screen-2xl mx-auto">
-      <div className="flex flex-col lg:flex-row min-h-screen text-neutral-100">
-        <div className="z-50">
+      <div className="grid lg:grid-cols-8 min-h-screen text-neutral-100">
+        <div className="z-50 col-span-2">
           <NavBar />
         </div>
-        <div className="container lg:w-[70%] mx-auto">{children}</div>
+        <div className="container mx-auto col-span-6">{children}</div>
       </div>
+      <Footer />
     </div>
   );
 };

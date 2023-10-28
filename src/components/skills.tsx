@@ -129,9 +129,11 @@ const Skills = () => {
         {data.map((item, idx) => (
           <motion.div
             key={idx}
+            initial={{opacity:0}}
+            whileInView={{ opacity: 1 }}
             animate={{ d: item.alt, rotate: [0, 0, 270, 270, 0] }}
             transition={{
-              duration: 2,
+              duration: 1,
               ease: "easeInOut",
               times: [0, 0.2, 0.5, 0.6, 1],
               repeat: Infinity,

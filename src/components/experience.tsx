@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { Anchor, Briefcase, ChevronDown, Satellite } from "lucide-react";
 
 const Experience = () => {
@@ -45,9 +46,15 @@ const Experience = () => {
   ];
 
   return (
-    <div>
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 1, staggerChildren: 0.7 }}
+    >
       <div className="flex flex-col justify-center items-start relative">
-        <div className="absolute right-0 animate-pulse text-[#ffffff61] lg:text-white"><Satellite size={200} /></div>
+        <div className="absolute right-0 animate-pulse text-[#ffffff61] lg:text-white">
+          <Satellite size={200} />
+        </div>
         <div className="flex flex-col justify-center items-start !w-full">
           <span className="pb-2 flex flex-row justify-center items-center space-x-2">
             <span>
@@ -59,8 +66,11 @@ const Experience = () => {
           </span>
           <div className="py-4 flex flex-col justify-center items-start !w-full">
             {roadMapData.map((data, idx) => (
-              <div
+              <motion.div
                 key={idx}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 1, staggerChildren: 0.7 }}
                 className="flex flex-col justify-center items-start !w-full"
               >
                 <span className="cursor-default">
@@ -105,7 +115,7 @@ const Experience = () => {
                     )}
                   </span>
                 )}
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -120,8 +130,11 @@ const Experience = () => {
           </span>
           <div className="py-4 flex flex-col justify-center items-start">
             {workHisData.map((data, idx) => (
-              <div
+              <motion.div
                 key={idx}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 1, staggerChildren: 0.7 }}
                 className="flex flex-col justify-center items-start !w-full"
               >
                 <span className="cursor-default">
@@ -151,12 +164,12 @@ const Experience = () => {
                     )}
                   </span>
                 )}
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -49,6 +49,7 @@ export default function Home() {
             repeat: Infinity,
             repeatDelay: 1,
           }}
+          className="cursor-grab"
         >
           <Sparkle size={100} color="#f3fa34" />
         </motion.div>
