@@ -14,12 +14,12 @@ const NavBar = () => {
     <nav className="w-64 z-50">
       {/* Desktop */}
       <motion.div
-        initial={{ y: "100vh" }}
-        animate={{ y: 0 }}
-        transition={{
-          delay: 0.5,
-          duration: 3,
-        }}
+        // initial={{ y: "100vh" }}
+        // animate={{ y: 0 }}
+        // transition={{
+        //   delay: 0.5,
+        //   duration: 3,
+        // }}
         className="hidden lg:block fixed top-10 w-64 rounded-t-full bg-white text-black"
       >
         <div className="w-0 h-0 border-t-[60px] border-t-transparent border-r-[75px] border-r-blue-500 border-b-[50px] border-b-transparent"></div>
