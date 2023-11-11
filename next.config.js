@@ -1,12 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    images: {
-        domains: [
-          "drive.google.com",
-          "random.imagecdn.app",
-          "googleusercontent.com"
-        ],
-    }
-}
+  images: {
+    remotePatterns: [
+      { hostname: "drive.google.com" },
+      { hostname: "random.imagecdn.app" },
+      { hostname: "googleusercontent.com" },
+    ],
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
