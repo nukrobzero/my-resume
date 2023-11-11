@@ -1,9 +1,10 @@
 import "src/styles/globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import Layout from "@/components/layout";
 import { Providers } from "@/lib/providers";
 import StarBackground from "@/components/starBg";
+import NavBar from "@/components/navBar";
+import Footer from "@/components/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,7 +23,13 @@ export default function RootLayout({
       <body className={`${inter.className} bg-black`}>
         {/* <StarBackground /> */}
         <Providers>
-          <Layout>{children}</Layout>
+          <main className="max-w-screen-2xl mx-auto grid lg:grid-cols-8 min-h-screen text-neutral-100">
+            <div className="z-50 col-span-2">
+              <NavBar />
+            </div>
+            <div className="container mx-auto col-span-6">{children}</div>
+          </main>
+          <Footer />
         </Providers>
       </body>
     </html>
