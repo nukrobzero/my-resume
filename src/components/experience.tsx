@@ -23,7 +23,7 @@ const Experience = () => {
     {
       title: "Sumipol Corporation Limited",
       position: "Web Programmer",
-      time: "December 2022 - Present",
+      time: "December 2022 - February 2024",
       jobDuty:
         "Write/Fix website, SEO, WordPress, API, Intigation and google analytics",
     },

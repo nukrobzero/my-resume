@@ -6,9 +6,8 @@ import Pagination from './paginations';
 export const revalidate = 60;
 
 const Work = () => {
-  const [repos, setRepos] = useState<any[]>([]); // เก็บผลลัพธ์จาก API
-  const [loading, setLoading] = useState(true); // จัดการสถานะโหลดข้อมูล
-
+  const [repos, setRepos] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     const callapi = async () => {
       try {
@@ -21,23 +20,26 @@ const Work = () => {
         });
         const res = await getRepo.json();
         const sortedRepos = res.sort((a: any, b: any) => b.id - a.id);
-        setRepos(sortedRepos); // เก็บค่าที่เรียงแล้วใน state
+        setRepos(sortedRepos);
       } catch (error) {
         console.error('Error fetching data:', error);
       } finally {
-        setLoading(false); // ตั้งค่า loading เป็น false เมื่อโหลดเสร็จ
+        setLoading(false);
       }
     };
 
-    callapi(); // เรียกใช้ฟังก์ชันเมื่อ component ถูก mount
+    callapi();
   }, []);
 
   return (
     <div>
       {loading ? (
-        <p>Loading...</p> // แสดงข้อความโหลดข้อมูล
+        <p>Loading...</p>
       ) : (
-        <Pagination data={repos} pageItem={6} /> // ส่ง repos ที่ได้จาก API ไปยัง Pagination component
+        <Pagination
+          data={repos}
+          pageItem={6}
+        />
       )}
     </div>
   );
