@@ -5,7 +5,7 @@ import { BriefcaseBusiness, GraduationCap } from 'lucide-react';
 
 const workHistory = [
   {
-    company: 'SCB (Outsource)',
+    company: 'Siam Commercial Bank (OS)',
     role: 'Full-stack Developer',
     period: 'March 2024 — Present',
     description: 'Develop and maintain web applications across frontend and backend systems.',
