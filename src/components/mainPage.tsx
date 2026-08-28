@@ -5,62 +5,68 @@ import Experience from "@/components/experience";
 import HomeHero from "@/components/home";
 import Skills from "@/components/skills";
 import Work from "@/components/work";
-import { motion } from "framer-motion";
-import { Sparkle } from "lucide-react";
 
-// export const revalidate = 5;
+const SectionHeader = ({
+  eyebrow,
+  title,
+  description,
+}: {
+  eyebrow: string;
+  title: string;
+  description: string;
+}) => (
+  <div className="mb-8 sm:mb-10">
+    <p className="text-xs font-semibold uppercase tracking-[0.25em] text-blue-300">
+      {eyebrow}
+    </p>
+    <div className="mt-3 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+      <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+        {title}
+      </h2>
+      <p className="max-w-xl text-sm leading-6 text-neutral-400 sm:text-right">
+        {description}
+      </p>
+    </div>
+    <div className="mt-6 h-px bg-gradient-to-r from-blue-400/70 via-white/10 to-transparent" />
+  </div>
+);
 
 export default function MainPage() {
   return (
     <>
       <HomeHero />
-      <div className="h-[200px] flex justify-start items-center" id="skills">
-        <span className="border-b w-full pb-3">
-          <h1 className="text-4xl font-semibold uppercase">Skills</h1>
-        </span>
-      </div>
-      <Skills />
-      <div
-        className="h-[200px] flex justify-start items-center"
-        id="experience"
-      >
-        <span className="border-b w-full pb-3">
-          <h1 className="text-4xl font-semibold uppercase">Experience</h1>
-        </span>
-      </div>
-      <Experience />
-      <div className="h-[200px] flex justify-start items-center" id="works">
-        <span className="border-b w-full pb-3">
-          <h1 className="text-4xl font-semibold uppercase">Works</h1>
-        </span>
-        <motion.div
-          drag
-          dragConstraints={{
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-          }}
-          animate={{ rotate: [0, 0, 270, 270, 0] }}
-          transition={{
-            duration: 2,
-            ease: "easeInOut",
-            times: [0, 0.2, 0.5, 0.8, 1],
-            repeat: Infinity,
-            repeatDelay: 1,
-          }}
-          className="cursor-grab"
-        >
-          <Sparkle size={100} color="#f3fa34" />
-        </motion.div>
-      </div>
-      <Work />
-      <div className="h-[200px] flex justify-start items-center" id="contact">
-        <span className="border-b w-full pb-3">
-          <h1 className="text-4xl font-semibold uppercase">Contact</h1>
-        </span>
-      </div>
-      <ContactSection />
+      <section id="skills" className="scroll-mt-20 py-20 sm:py-24">
+        <SectionHeader
+          eyebrow="Capabilities"
+          title="Skills"
+          description="Technologies and tools I use to take ideas from interface design to reliable production systems."
+        />
+        <Skills />
+      </section>
+      <section id="experience" className="scroll-mt-20 py-20 sm:py-24">
+        <SectionHeader
+          eyebrow="Career journey"
+          title="Experience"
+          description="A track record across full-stack development, web programming, systems engineering, and technical operations."
+        />
+        <Experience />
+      </section>
+      <section id="works" className="scroll-mt-20 py-20 sm:py-24">
+        <SectionHeader
+          eyebrow="Selected repositories"
+          title="Works"
+          description="A selection of public projects, experiments, and tools from my GitHub profile."
+        />
+        <Work />
+      </section>
+      <section id="contact" className="scroll-mt-20 py-20 sm:py-24">
+        <SectionHeader
+          eyebrow="Get in touch"
+          title="Contact"
+          description="Have an opportunity or an idea worth building? Send the details and I’ll get back to you."
+        />
+        <ContactSection />
+      </section>
     </>
   );
 }
