@@ -4,10 +4,10 @@ import Link from "next/link";
 import { FC, useRef, useState } from "react";
 import Image from "next/image";
 import { dateFormat } from "@/lib/dateFormat";
-import { Pagination as PaginationNextUi } from "@nextui-org/react";
+import { Pagination as HeroUIPagination } from "@heroui/react";
 import { motion } from "framer-motion";
 
-interface DataType {
+export interface DataType {
   id: number;
   name: string;
   html_url: string;
@@ -37,7 +37,7 @@ const Pagination: FC<PaginationProps> = ({ data, pageItem }) => {
   const currentItems = data.slice(startIndex, endIndex);
 
   // Function to handle page change
-  const handlePageChange = (page: any) => {
+  const handlePageChange = (page: number) => {
     setCurrentPage(page);
 
     scrollRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -49,7 +49,7 @@ const Pagination: FC<PaginationProps> = ({ data, pageItem }) => {
   return (
     <div>
       <div className="grid grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-x-2 lg:gap-y-10 justify-items-center mx-auto my-12">
-        {currentItems.map((data: any) => (
+        {currentItems.map((data) => (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -83,7 +83,7 @@ const Pagination: FC<PaginationProps> = ({ data, pageItem }) => {
         ))}
       </div>
       <div className="flex justify-center my-8">
-        <PaginationNextUi
+        <HeroUIPagination
           onChange={handlePageChange}
           showControls
           showShadow

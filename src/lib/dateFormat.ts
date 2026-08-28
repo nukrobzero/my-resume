@@ -1,4 +1,4 @@
-export const dateFormat = (data: any) => {
+export const dateFormat = (data: string | number | Date) => {
     const date: Date = new Date(data);
     const day: string = ("0" + date.getDate()).slice(-2);
     const month: string = ("0" + (date.getMonth() + 1)).slice(-2);

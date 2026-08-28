@@ -2,7 +2,6 @@ import "../styles/globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Providers } from "@/lib/providers";
-import StarBackground from "@/components/starBg";
 import NavBar from "@/components/navBar";
 import Footer from "@/components/footer";
 
@@ -21,7 +20,6 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${inter.className} bg-black`}>
-        {/* <StarBackground /> */}
         <Providers>
           <main className="max-w-screen-2xl mx-auto grid lg:grid-cols-8 min-h-screen text-neutral-100">
             <div className="z-50 col-span-2">

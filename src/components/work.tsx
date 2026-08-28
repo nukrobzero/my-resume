@@ -2,11 +2,12 @@
 
 import { useEffect, useState } from 'react';
 import Pagination from './paginations';
+import type { DataType } from './paginations';
 
 export const revalidate = 60;
 
 const Work = () => {
-  const [repos, setRepos] = useState<any[]>([]);
+  const [repos, setRepos] = useState<DataType[]>([]);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     const callapi = async () => {
@@ -18,8 +19,8 @@ const Work = () => {
           },
           cache: 'no-cache',
         });
-        const res = await getRepo.json();
-        const sortedRepos = res.sort((a: any, b: any) => b.id - a.id);
+        const res = (await getRepo.json()) as DataType[];
+        const sortedRepos = res.sort((a, b) => b.id - a.id);
         setRepos(sortedRepos);
       } catch (error) {
         console.error('Error fetching data:', error);

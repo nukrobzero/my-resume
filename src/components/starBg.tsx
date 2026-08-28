@@ -8,10 +8,9 @@ const StarBackground = () => {
   const animations = ["pulse", "spin", "ping", "bounce"];
 
   const stars = Array.from({ length: numStars }).map((_, index) => {
-    const randomTop = Math.random() * 100; // Percentage of viewport height
-    const randomLeft = Math.random() * 100; // Percentage of viewport width
-    const randomAnimate =
-      animations[Math.floor(Math.random() * animations.length)];
+    const randomTop = (index * 47.3) % 100;
+    const randomLeft = (index * 73.7) % 100;
+    const randomAnimate = animations[index % animations.length];
 
     return (
       <div key={index}>
